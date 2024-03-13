@@ -8,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty",
                 "json:target/cucumber.json",},
-        features = {"src/test/resources/features","src/test/resources/apiFeatures"},
+        features = {"src/test/resources/features"},
         glue = "stepdefinitions",
-        tags = "@apk",
+        tags = "@arabam",
         dryRun =false
 
 

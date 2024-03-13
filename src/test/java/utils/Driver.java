@@ -17,7 +17,7 @@ public class Driver {
     private static AndroidDriver<AndroidElement> appiumDriver;
     private static  IOSDriver<IOSElement> iosDriver;
 
-    static final String TELEFONADI="PIXEL 7";
+    static final String TELEFONADI="PIXEL 2";
     static final String ANDROIDVERSION="10.0";
     static final String PLATFORM="Android";
     static final String OTOMASYON_ISMI="UiAutomator2";
@@ -39,8 +39,10 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-            caps.setCapability("appPackage","com.smartwho.SmartAllCurrencyConverter");
-            caps.setCapability("appActivity","com.smartwho.SmartAllCurrencyConverter.CurrencyConverter");
+            caps.setCapability("appPackage","com.dogan.arabam");
+            caps.setCapability("appActivity","com.dogan.arabam.presentation.feature.home.HomeActivity");
+            //
+            //
             caps.setCapability(MobileCapabilityType.NO_RESET,false);
             /* eger bu capability FALSE olarak kullanilirsa,uygulama test edildikten sonra her seferinde kullanici datalari temizlenir ve
             uygulamanin ilk install haline dondurulur
@@ -52,7 +54,7 @@ public class Driver {
 
                 assert appiumServerURL != null;
                 appiumDriver = new AndroidDriver<AndroidElement>(appiumServerURL,caps);
-                appiumDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+                appiumDriver.manage().timeouts().implicitlyWait(35, TimeUnit.SECONDS);
             }else {
 
                 assert appiumServerURL != null;
